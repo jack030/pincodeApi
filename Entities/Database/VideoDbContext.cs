@@ -10,6 +10,8 @@ public class VideoDbContext : DbContext
     }
     public virtual DbSet<Video> Videos { get; set; }
     public virtual DbSet<Room> Rooms { get; set; }
+
+    public virtual DbSet<VideoFile> VideoFiles { get;set;}
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -27,6 +29,12 @@ public class VideoDbContext : DbContext
             Link = "google.com",
             RoomId = 1
 
+        });
+        modelBuilder.Entity<VideoFile>().HasData(new VideoFile
+        {
+            Id = 1,
+            Name = "video1",
+           
         });
 
     }

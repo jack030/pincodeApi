@@ -23,6 +23,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRoomRepository, RoomRepositpry>();
 builder.Services.AddScoped<IVideoRepository, VideoRepository>();
+builder.Services.AddScoped<IVideoFileRepository, VideoFileRepository>();
 string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 Console.Write(connectionString);
 builder.Services.AddDbContext<UserDbContext>(options => options.UseSqlite(connectionString));

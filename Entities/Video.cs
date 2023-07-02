@@ -13,6 +13,10 @@ public class Video
 
     public int RoomId{get;set;}
     public virtual Room? Room{get;set;} = null;
+
+    public int FileID{get;set;}
+
+    
     //TODO: description
     //thubmnail
     
